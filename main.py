@@ -7,6 +7,8 @@ from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
 import time
 
+DEFAULT_SAVE_PATH = "Z:\\nextcloud\\data\\admin\\files\\Documents\\小说"
+
 # 配置日志
 logging.basicConfig(
     level=logging.DEBUG,  # 设置日志等级为 DEBUG
@@ -117,9 +119,9 @@ if __name__ == "__main__":
     while not book_name:
         book_name = input("请输入书名：")
 
-    save_path = input("请输入小说保存文件夹 (默认文件夹 Z:\\nextcloud\\data\\admin\\files\\Documents\\小说): ")
+    save_path = input("请输入小说保存文件夹 (默认文件夹 {save_path}): ".format(save_path=DEFAULT_SAVE_PATH))
     if not save_path:
-        save_path = "Z:\\nextcloud\\data\\admin\\files\\Documents\\小说"
+        save_path = DEFAULT_SAVE_PATH
 
     # 根据不同种类小说使用不同函数下载
     if category == "1":
