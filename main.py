@@ -46,6 +46,7 @@ def get_chapter_from_url(out_path, book):
     chapter_list = soup.find_all('h3', class_='post-title entry-title')
 
     chapter_object_list = []
+    part = None  # 初始化part为None
     for chapter in chapter_list:
         title = chapter.text.strip().replace("{book} ".format(book=book), "")
         if "第" in title and ("集" in title or "卷" in title):  # 检查标题是否包含"第"和"集"
@@ -139,3 +140,5 @@ if __name__ == "__main__":
 
     if category == "3":
         download_novel(book_name, save_path, get_chapter_from_file)
+
+    os.startfile(save_path)
