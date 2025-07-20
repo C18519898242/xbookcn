@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Virtual Environment
+.venv/
+venv/
+ENV/
+
+# Downloaded Content & Cache
+novels/
+chapters/
+categories/
+
+# IDE / Editor specific
+.vscode/
+.idea/
+*.swp
+*.swo
