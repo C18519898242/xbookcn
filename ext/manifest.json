@@ -1,0 +1,40 @@
+{
+  "manifest_version": 3,
+  "name": "XB 小说下载器",
+  "version": "0.2.0",
+  "description": "把 book.xbookcn.net 的长篇按书名下载为 TXT，供个人离线阅读。",
+  "permissions": ["storage", "unlimitedStorage", "downloads"],
+  "host_permissions": [
+    "https://book.xbookcn.net/*",
+    "https://blog.xbookcn.net/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://book.xbookcn.net/*",
+        "https://blog.xbookcn.net/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "XB 下载器",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

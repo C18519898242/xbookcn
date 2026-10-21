@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header>
+    <b>XB 下载器</b>
+    <span id="ver">v0.2.0</span>
+  </header>
+
+  <main id="onSite">
+    <label for="name">书名（站内标签）</label>
+    <input id="name" type="text" placeholder="例如：出差" autocomplete="off">
+
+    <div class="row">
+      <button id="start" class="primary">开始</button>
+      <button id="pause">暂停</button>
+    </div>
+
+    <div class="bar-wrap"><div id="bar" class="bar"></div></div>
+    <div id="status">待机</div>
+
+    <label class="check"><input id="test" type="checkbox"> 只跑 2 章（测试）</label>
+
+    <pre id="log"></pre>
+
+    <p class="hint">任务在页面里运行，下载期间请保持该书页标签打开。遇到验证页会暂停，刷新页面完成验证后点“继续”。</p>
+  </main>
+
+  <main id="offSite" hidden>
+    <p class="off">请先打开 <b>book.xbookcn.net</b> 的书页或目录页。</p>
+    <button id="openSite" class="primary">打开长篇站</button>
+  </main>
+
+  <script src="popup.js"></script>
+</body>
+</html>

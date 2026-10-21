@@ -1,0 +1,108 @@
+:root {
+  color-scheme: dark;
+  --bg: #1e1f22;
+  --panel: #2a2c30;
+  --line: #3a3c40;
+  --text: #e8e8e8;
+  --muted: #9aa0a6;
+  --accent: #4c6ef5;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  width: 300px;
+  margin: 0;
+  padding: 0 12px 12px;
+  background: var(--bg);
+  color: var(--text);
+  font: 12px/1.5 -apple-system, "Segoe UI", "Microsoft YaHei", sans-serif;
+}
+
+header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 10px 0 8px;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 10px;
+}
+
+header b { font-size: 13px; letter-spacing: .3px; }
+header span { color: var(--muted); font-size: 11px; }
+
+label { display: block; color: var(--muted); font-size: 11px; margin-bottom: 4px; }
+
+input[type=text] {
+  width: 100%;
+  padding: 6px 8px;
+  margin-bottom: 8px;
+  color: var(--text);
+  background: #141517;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  font-size: 12px;
+  outline: none;
+}
+
+input[type=text]:focus { border-color: var(--accent); }
+
+.row { display: flex; gap: 6px; margin-bottom: 8px; }
+
+button {
+  flex: 1;
+  padding: 6px 0;
+  font-size: 12px;
+  cursor: pointer;
+  color: var(--text);
+  background: #33363b;
+  border: 1px solid #44474d;
+  border-radius: 6px;
+}
+
+button:hover { background: #3d4148; }
+button.primary { background: #3b5bdb; border-color: var(--accent); }
+button.primary:hover { background: var(--accent); }
+button:disabled { opacity: .45; cursor: not-allowed; }
+
+.bar-wrap {
+  height: 4px;
+  background: var(--panel);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-bottom: 6px;
+}
+
+.bar { height: 100%; width: 0; background: var(--accent); transition: width .25s; }
+
+#status {
+  min-height: 18px;
+  margin-bottom: 8px;
+  color: #c9cdd2;
+  word-break: break-all;
+}
+
+.check {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin: 0 0 8px;
+  color: var(--muted);
+}
+
+pre {
+  height: 70px;
+  overflow: auto;
+  margin: 0 0 8px;
+  padding: 4px 6px;
+  background: #141517;
+  border: 1px solid var(--panel);
+  border-radius: 6px;
+  color: #8b9096;
+  font-size: 11px;
+  white-space: pre-wrap;
+}
+
+.hint { margin: 0; color: #7f858c; font-size: 11px; line-height: 1.45; }
+
+.off { color: var(--muted); margin: 4px 0 10px; }
